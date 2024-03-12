@@ -1,16 +1,35 @@
 ---
+export interface Props {
+  isTopPage: boolean;
+}
+const { isTopPage } = Astro.props;
+
 const cmnPath = `/assets/img/common/`;
 ---
 
-<header class="gHeader">
-  <a href="/" class="gHeader__logo" rel="prefetch">Hogehoge company</a>
+<header id="header" class="cmpHeader">
+  {
+    isTopPage ? (
+      <h1 class="gHeader__logo">
+        <a href="/" class="cmpHeader__logo" rel="prefetch">
+          Hogehoge company
+        </a>
+      </h1>
+    ) : (
+      <p class="gHeader__logo">
+        <a href="/" class="cmpHeader__logo" rel="prefetch">
+          Hogehoge company
+        </a>
+      </p>
+    )
+  }
 </header>
 
 <style lang="scss">
   @use "sass:math";
 
-  .gHeader {
-    $_: ".gHeader";
+  .cmpHeader {
+    $_: ".cmpHeader";
 
     width: 100%;
     padding: 20px 50px;

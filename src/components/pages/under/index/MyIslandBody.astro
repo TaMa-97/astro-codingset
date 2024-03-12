@@ -5,12 +5,14 @@ import MyIslandNav from "src/components/pages/under/index/MyIslandNav.astro";
 import MyIslandTitlePage from "src/components/pages/under/index/MyIslandTitlePage.astro";
 ---
 
-<MyIslandBreadcrumbs />
-<MyIslandTitlePage />
+<div transition:name="wrapper">
+  <MyIslandBreadcrumbs />
+  <MyIslandTitlePage />
 
-<div class="cmpUnderWrapper">
-  <div class="container">
-    <MyIslandNav />
-    <MyIslandDetail />
+  <div class="cmpUnderWrapper">
+    <div class="container">
+      <MyIslandNav />
+      <MyIslandDetail />
+    </div>
   </div>
 </div>

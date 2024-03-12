@@ -22,8 +22,7 @@ class Link {
    */
   eventHandler(headerFixedF: boolean): void {
     // ヘッダー固定の場合、ヘッダーの高さ分アンカーリンクでの移動位置をずらす
-    // const headerH = headerFixedF ? $("#header").innerHeight() : 0;
-    const headerH: number = headerFixedF ? 42 : 0;
+    const headerH = headerFixedF ? $("#header").innerHeight() : 0;
 
     // アンカーリンクをクリック
     $('[href^="#"][href!="#"]').on("click", (ev: $.Event) => {

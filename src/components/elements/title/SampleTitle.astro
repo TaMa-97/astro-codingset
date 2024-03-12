@@ -8,12 +8,12 @@ const { title, level = 2 } = Astro.props;
 const Heading = `h${level}`;
 ---
 
-<Heading class="cmpTitle01" data-fadein>{title}</Heading>
+<Heading class="cmpSampleTitle" data-fadein>{title}</Heading>
 
 <style lang="scss">
   @use "sass:math";
 
-  .cmpTitle01 {
+  .cmpSampleTitle {
     $_: &;
 
     position: relative;
@@ -35,5 +35,5 @@ const Heading = `h${level}`;
 
       @include fz(18);
     }
-  } //.cmpTitle01
+  } //.cmpSampleTitle
 </style>
