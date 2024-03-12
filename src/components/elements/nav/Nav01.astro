@@ -1,0 +1,99 @@
+---
+// src/components/elements/nav/Nav01.astro
+export interface Props {
+  navList: { text: string; href: string }[];
+}
+
+const { navList } = Astro.props;
+---
+
+<ul class="cmpNavList">
+  {
+    navList.map((item) => (
+      <li class="cmpNavList__item">
+        <a href={item.href} class="cmpNavList__link" rel="prefetch">
+          {item.text}
+          <span class="cmpNavList__linkIcon" />
+        </a>
+      </li>
+    ))
+  }
+</ul><!-- /.cmpNavList -->
+
+<style lang="scss">
+  @use "sass:math";
+
+  $_id: top;
+  $_imgPath: "/img/#{$_id}/";
+
+  .cmpNavList {
+    $_: &;
+
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 40px;
+
+    @include tabletP {
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-start;
+    }
+
+    &__item {
+      width: calc((100% - 20px * 3) / 4);
+
+      @include tabletP {
+        width: calc((100% - 10px) / 2);
+      }
+    }
+
+    &__link {
+      position: relative;
+      display: block;
+      padding: 16px;
+      font-weight: 500;
+      line-height: math.div(24, 16);
+      color: #0041c0;
+      text-align: center;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+
+      @include fz(16);
+
+      border: 1px solid #0041c0;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+
+      @include tabletP {
+        padding: 10px;
+
+        @include fz(14);
+      }
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    &__linkIcon {
+      position: absolute;
+      top: 3px;
+      right: 18px;
+      bottom: 0;
+      display: inline-block;
+      width: 12px;
+      height: calc(tan(60deg) * 12px / 2);
+      margin: auto;
+      clip-path: polygon(0 0, 100% 0, 50% 100%);
+      background: #0041c0;
+
+      @include tabletP {
+        top: 0;
+        right: 10px;
+        width: 8px;
+        height: calc(tan(60deg) * 8px / 2);
+      }
+    }
+  } //.cmpNavList
+</style>

@@ -1,0 +1,44 @@
+---
+interface PictureProps {
+  path: string;
+  imgName: string;
+  extension: string;
+  altText: string;
+  has2x: boolean;
+}
+
+const imgPath = `${(Astro.props as PictureProps).path}${
+  (Astro.props as PictureProps).imgName
+}`;
+---
+
+<picture>
+  {
+    (Astro.props as PictureProps).has2x ? (
+      <>
+        <source
+          srcset={`${imgPath}_sp.${
+            (Astro.props as PictureProps).extension
+          } 1x, ${imgPath}_sp@2x.${(Astro.props as PictureProps).extension} 2x`}
+          media="(max-width: 768px)"
+        />
+        <img
+          src={`${imgPath}.${(Astro.props as PictureProps).extension}`}
+          srcset={`${imgPath}@2x.${(Astro.props as PictureProps).extension} 2x`}
+          alt={(Astro.props as PictureProps).altText}
+        />
+      </>
+    ) : (
+      <>
+        <source
+          srcset={`${imgPath}_sp.${(Astro.props as PictureProps).extension}`}
+          media="(max-width: 768px)"
+        />
+        <img
+          src={`${imgPath}.${(Astro.props as PictureProps).extension}`}
+          alt={(Astro.props as PictureProps).altText}
+        />
+      </>
+    )
+  }
+</picture>

@@ -1,0 +1,247 @@
+@use "src/styles/global"as *;
+@use "sass:math";
+
+/* link
+------------------------------------------------------------ */
+a {
+  color: $baseFontLinkColor;
+  text-decoration: underline;
+
+  @media (hover: hover) {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+a,
+button {
+  transition: opacity 0.3s ease;
+
+  @media (hover: hover) {
+    &:hover {
+      @include tabletPmin {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+/* Fonts
+------------------------------------------------------------ */
+body {
+  font-family: $baseFontFamily;
+  line-height: $baseLineHeight;
+  color: $baseFontColor;
+  letter-spacing: $baseLetterSpacing;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-size-adjust: 100%;
+
+  @include fz;
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: $baseFontFamily;
+  font-size: 100%;
+  line-height: $baseLineHeight;
+  color: $baseFontColor;
+}
+
+/*
+#styleguide
+container
+
+```
+<div class="container">
+左右にpaddingつきます
+</div>
+```
+*/
+.container {
+  max-width: map-get($containerWidth, "base");
+  padding-right: $containerPadding;
+  padding-left: $containerPadding;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+br {
+  &.pc {
+    @include tabletP {
+      display: none;
+    }
+  }
+
+  &.sp {
+    @include tabletPmin {
+      display: none;
+    }
+  }
+}
+
+[role="tabpanel"] {
+  &[aria-hidden="true"] {
+    display: none;
+  }
+
+  &[aria-hidden="false"] {
+    display: block;
+  }
+}
+
+a[href*="tel:"] {
+  @include sphonePmin {
+    pointer-events: none;
+  }
+
+  &.noStyle {
+    color: nth($baseFontColor, 1);
+    text-decoration: none;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+/*
+gBreadcrumb
+*/
+.gBreadcrumb {
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      &::after {
+        display: inline-block;
+        width: 0.5em;
+        height: 0.5em;
+        margin: 0 8px;
+        vertical-align: 0.1em;
+        content: "";
+        border-top: 1px solid currentcolor;
+        border-right: 1px solid currentcolor;
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+}
+
+//.gBreadcrumb
+
+/*
+gContents
+*/
+.gContents {
+  position: relative;
+  z-index: 1;
+  font-family: $baseFontFamily;
+
+  // padding-top: $headerHeight;
+
+  @include tabletP {
+    // padding-top: $headerHeightSp;
+  }
+
+  &__inner {
+    font-family: $baseFontFamily;
+    background: #fff;
+  }
+}
+
+/*
+gWrapper
+*/
+.gWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow: hidden;
+}//.gWrapper
+
+
+.gUnderWrapper {
+  position: relative;
+  width: 100%;
+  padding: 80px 0 118px;
+  background: #fff;
+
+  @include tabletP {
+    padding: 40px 0 60px;
+  }
+}//.gUnderWrapper
+
+.gSection {
+  margin-bottom: 80px;
+
+  @include tabletP {
+    margin-bottom: 40px;
+  }
+}
+
+
+/*
+gPcOnly
+```
+<div class="gPcOnly">tabletP以上でのみ表示</div>
+```
+*/
+
+.gPcOnly {
+  @include tabletP {
+    display: none;
+  }
+}
+
+/*
+gSpOnly
+```
+<div class="gSpOnly">tabletP未満のみで表示</div>
+```
+*/
+.gSpOnly {
+  @include tabletPmin {
+    display: none;
+  }
+}
+
+/*
+gStart
+```
+<div class="gStart">テキスト左寄せ</div>
+```
+*/
+.gStart {
+  text-align: left;
+}
+
+/*
+gCenter
+```
+<div class="gCenter">テキスト中央寄せ</div>
+```
+*/
+.gCenter {
+  text-align: center;
+}
+
+/*
+gEnd
+```
+<div class="gEnd">テキスト右寄せ</div>
+```
+*/
+.gEnd {
+  text-align: right;
+}

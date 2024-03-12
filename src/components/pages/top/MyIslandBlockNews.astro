@@ -1,0 +1,135 @@
+---
+import { siteData } from "src/layouts/common/Variables.astro";
+const pageId = "top";
+const cmnPath = `${siteData.gRootPath}assets/img/common/`;
+const imgPath = `${siteData.gRootPath}assets/img/${pageId}/`;
+---
+
+<section class="myNews">
+  <div class="container">
+    <h2 class="myNews__title">
+      新着情報<span class="myNews__title-en">News</span>
+    </h2>
+    <ul class="myNews__list">
+      <li class="myNews__item">
+        <p class="myNews__date">2024年3月22日</p>
+        <p class="myNews__text">
+          Webサイトをリニューアルしました。<br />
+          <a href="/under/" class="myNews__link" rel="prefetch">こちら</a
+          >よりご覧ください。
+        </p>
+      </li>
+      <li class="myNews__item">
+        <p class="myNews__date">2024年3月22日</p>
+        <p class="myNews__text">
+          Webサイトをリニューアルしました。<br />
+          <a href="/under/" class="myNews__link" rel="prefetch">こちら</a
+          >よりご覧ください。
+        </p>
+      </li>
+      <li class="myNews__item">
+        <p class="myNews__date">2023年6月21日</p>
+        <p class="myNews__text">
+          Webサイトをリニューアルしました。<br />
+          <a href="/under/" class="myNews__link" rel="prefetch">こちら</a
+          >よりご覧ください。
+        </p>
+      </li>
+    </ul>
+  </div>
+</section>
+<!-- /.myNews -->
+
+<style lang="scss">
+  @use "sass:math";
+
+  $_id: top;
+  $_imgPath: "/assets/img/#{$_id}/";
+
+  .myNews {
+    padding: 50px 0;
+    background: #fff;
+
+    &__title {
+      position: relative;
+      margin-bottom: 20px;
+      font-weight: bold;
+      color: #222;
+      letter-spacing: 0.05em;
+
+      @include fz(26);
+
+      @include tabletP {
+        @include fz(20);
+      }
+
+      &-en {
+        display: block;
+        font-family: $fontAlpha;
+        font-weight: 400;
+        color: #0041c0;
+        letter-spacing: 0.1em;
+
+        @include fz(16);
+
+        @include tabletP {
+          @include fz(14);
+        }
+      }
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__item {
+      padding: 24px 15px;
+      border-bottom: 1px solid #ccc;
+
+      @include tabletP {
+        padding: 24px 15px;
+      }
+
+      &:first-child {
+        border-top: 1px solid #ccc;
+      }
+    }
+
+    &__date {
+      @include fz(14);
+
+      margin-bottom: 7px;
+      line-height: math.div(20, 14);
+      color: #222;
+
+      @include tabletP {
+        @include fz(12);
+
+        line-height: math.div(18, 12);
+      }
+    }
+
+    &__text {
+      @include fz(16);
+
+      line-height: math.div(24, 16);
+      color: #222;
+
+      @include tabletP {
+        @include fz(14);
+
+        line-height: math.div(20, 14);
+      }
+    }
+
+    &__link {
+      color: #0041c0;
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  } //.myNews
+</style>

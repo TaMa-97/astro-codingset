@@ -1,0 +1,157 @@
+---
+import { siteData } from "src/layouts/common/Variables.astro";
+const pageId = "top";
+const cmnPath = `${siteData.gRootPath}assets/img/common/`;
+const imgPath = `${siteData.gRootPath}assets/img/${pageId}/`;
+---
+
+<section class="myNav">
+  <div class="myNav__inner">
+    <ul class="myNav__list">
+      <li class="myNav__item">
+        <a href="/under/" class="myNav__link" rel="prefetch">
+          <div class="myNav__linkFoot">
+            <h2 class="myNav__linkFoot-txt">
+              下層第一階層<span class="myNav__linkFoot-en">Under</span>
+            </h2>
+          </div>
+        </a>
+      </li>
+      <li class="myNav__item">
+        <a href="/under/under/" class="myNav__link" rel="prefetch">
+          <div class="myNav__linkFoot">
+            <h2 class="myNav__linkFoot-txt">
+              下層第二階層<span class="myNav__linkFoot-en">UnderUnder</span>
+            </h2>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<style lang="scss">
+  @use "sass:math";
+
+  $_id: top;
+  $_imgPath: "/assets/img/#{$_id}/";
+
+  .myNav {
+    $_: ".myNav";
+
+    padding: 100px 0;
+    background: #f2f2f2;
+
+    &__inner {
+      max-width: 976px;
+      padding-right: $containerPadding;
+      padding-left: $containerPadding;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: flex-start;
+    }
+
+    &__item {
+      width: calc((100% - 20px) / 2);
+
+      @include tabletP {
+        width: 100%;
+      }
+    }
+
+    &__link {
+      position: relative;
+      display: block;
+      text-decoration: none;
+      background-image: url("https://placehold.jp/1000x1000.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      border-radius: 20px;
+
+      @include tabletPmin {
+        min-height: 440px;
+      }
+
+      @include tabletP {
+        min-height: 330px;
+      }
+
+      &::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: "";
+        background-color: rgb(0 65 192 / 0%);
+        border-radius: 20px;
+        transition: all 0.3s ease;
+      }
+
+      &:hover {
+        &::after {
+          background-color: rgb(0 65 192 / 50%);
+        }
+      }
+
+      &Foot {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 30px;
+        margin: auto;
+        color: #fff;
+        background: #0041c0;
+        border-radius: 0 0 12px 12px;
+
+        @include tabletP {
+          padding: 15px 20px;
+        }
+
+        &-txt {
+          display: flex;
+          gap: 15px;
+          align-items: center;
+          justify-content: flex-start;
+          font-weight: 500;
+          letter-spacing: 0.05em;
+
+          @include fz(26);
+
+          @include tabletP {
+            @include fz(20);
+
+            gap: 5px;
+          }
+        }
+
+        &-en {
+          position: relative;
+          top: 2px;
+          display: inline-block;
+          font-family: $fontAlpha;
+          font-weight: 400;
+          letter-spacing: 0.1em;
+
+          @include fz(16);
+
+          @include tabletP {
+            @include fz(13);
+          }
+        }
+      }
+    }
+  } //.myNav
+</style>

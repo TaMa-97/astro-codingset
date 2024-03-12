@@ -1,0 +1,39 @@
+---
+import Title01 from "src/components/elements/title/Title01.astro";
+import { siteData } from "src/layouts/common/Variables.astro";
+const pageId = "under";
+const cmnPath = `${siteData.gRootPath}assets/img/common/`;
+const imgPath = `${siteData.gRootPath}assets/img/${pageId}/`;
+---
+
+<section id="section01" class="gSection">
+  <Title01 title="section01" />
+  <p class="txt01">section01テキスト</p>
+</section>
+<section id="section02" class="gSection">
+  <Title01 title="section02" />
+  <p class="txt01">section02テキスト</p>
+</section>
+
+<style lang="scss">
+  @use "sass:math";
+
+  $_id: campany;
+  $_imgPath: "/img/#{$_id}/index/";
+
+  .txt01 {
+    font-weight: 400;
+    line-height: math.div(30, 18);
+    letter-spacing: normal;
+
+    @include fz(18);
+
+    @include tabletP {
+      @include fz(14);
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+</style>

@@ -1,0 +1,85 @@
+---
+export interface Breadcrumb {
+  text: string;
+  href: string;
+  current: boolean;
+}
+
+export interface BreadcrumbProps {
+  breadcrumbs: Breadcrumb[];
+}
+
+const { breadcrumbs } = Astro.props;
+---
+
+<div class="cmpBreadcrumb">
+  <div class="container">
+    <ul class="cmpBreadcrumb__inner">
+      {
+        breadcrumbs.map((breadcrumb) => (
+          <li
+            class={`cmpBreadcrumb__item ${breadcrumb.current ? "-current" : ""}`}
+          >
+            <a
+              href={breadcrumb.href}
+              class="cmpBreadcrumb__link"
+              rel="prefetch"
+            >
+              {breadcrumb.text}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div><!-- /.cmpBreadcrumb -->
+
+<style lang="scss">
+  @use "sass:math";
+
+  .cmpBreadcrumb {
+    $_: &;
+
+    background-color: #f2f2f2;
+
+    &__inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      padding: 13px 0;
+
+      @include tabletP {
+        padding: 7px 0;
+      }
+    }
+
+    &__item {
+      &:not(:last-child) {
+        border-right: 1px solid #666;
+      }
+
+      &.-current {
+        #{$_}__link {
+          color: #222;
+        }
+      }
+    }
+
+    &__link {
+      display: block;
+      padding: 0 20px;
+      font-weight: 400;
+      color: #666;
+      letter-spacing: normal;
+      widows: 100%;
+
+      @include fz(16);
+
+      @include tabletP {
+        @include fz(10);
+
+        padding: 0 5px;
+      }
+    }
+  }
+</style>

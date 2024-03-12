@@ -1,0 +1,26 @@
+---
+import Footer from "src/components/layouts/footer/Footer.astro";
+import Header from "src/components/layouts/header/Header.astro";
+import MyIslandBody from "src/components/pages/under/under/MyIslandBody.astro";
+import BaseLayout from "src/layouts/BaseLayout.astro";
+import { siteData } from "src/layouts/common/Variables.astro";
+
+const title = `下層第二階層 | 下層第一階層 | ${siteData.gTitle}`;
+const description = `${siteData.gDescription}`;
+const ogtype = "article";
+const isTopPage = false;
+const parentId = "under";
+const pageId = "under";
+const cmnPath = `/assets/img/common/`;
+const imgPath = `/assets/img/${parentId}/${pageId}/`;
+---
+
+<BaseLayout title={title} description={description} ogtype={ogtype}>
+  <Header isTopPage={isTopPage} />
+  <main id="contents" class="gContents">
+    <div class="gContents__inner">
+      <MyIslandBody />
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

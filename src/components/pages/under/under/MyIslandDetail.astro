@@ -1,0 +1,26 @@
+---
+import Title01 from "src/components/elements/title/Title01.astro";
+import { siteData } from "src/layouts/common/Variables.astro";
+const parentId = "under";
+const pageId = "under";
+const cmnPath = `${siteData.gRootPath}assets/img/common/`;
+const imgPath = `${siteData.gRootPath}assets/img/${parentId}/${pageId}/`;
+---
+
+<section id="section01" class="gSection">
+  <Title01 title="section01" />
+  <p>section01テキスト</p>
+</section>
+
+<section id="section02" class="gSection">
+  <Title01 title="section02" />
+  <p>section02テキスト</p>
+</section>
+
+<style lang="scss">
+  @use "sass:math";
+
+  $_idParent: "under";
+  $_id: "under";
+  $_imgPath: "/assets/img/#{$_idParent}/#{$_id}/";
+</style>

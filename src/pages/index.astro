@@ -1,0 +1,27 @@
+---
+import Footer from "src/components/layouts/footer/Footer.astro";
+import Header from "src/components/layouts/header/Header.astro";
+import MyIslandBody from "src/components/pages/top/MyIslandBody.astro";
+import BaseLayout from "src/layouts/BaseLayout.astro";
+import { siteData } from "src/layouts/common/Variables.astro";
+
+const title = `${siteData.gTitle}`;
+const description = `${siteData.gDescription}`;
+const ogtype = "website";
+const isTopPage = true;
+const pageId = "top";
+const cmnPath = `/assets/img/common/`;
+const imgPath = `/assets/img/${pageId}/`;
+---
+
+<BaseLayout title={title} description={description} ogtype={ogtype}>
+  <div id="wrapper" class="gWrapper">
+    <Header isTopPage={isTopPage} />
+    <main id="contents" class="gContents">
+      <div class="gContents__inner">
+        <MyIslandBody />
+      </div>
+    </main><!-- /#contents -->
+    <Footer />
+  </div><!-- /#wrapper -->
+</BaseLayout>

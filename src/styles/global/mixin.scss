@@ -1,0 +1,114 @@
+@use "variables" as *;
+@use "sass:math";
+
+@mixin narrowPC {
+  @media only screen and (max-width: map-get($bp, "narrowpc")) {
+    @content;
+  }
+}
+
+@mixin narrowPCmin {
+  @media only screen and (min-width: #{map-get($bp, 'narrowpc') + 1}) {
+    @content;
+  }
+}
+
+@mixin tabletP {
+  @media only screen and (max-width: map-get($bp, "tabletp")) {
+    @content;
+  }
+}
+
+@mixin tabletPmin {
+  @media only screen and (min-width: #{map-get($bp, 'tabletp') + 1}) {
+    @content;
+  }
+}
+
+@mixin sphoneP {
+  @media only screen and (max-width: map-get($bp, "sphonep")) {
+    @content;
+  }
+}
+
+@mixin sphonePmin {
+  @media only screen and (min-width: #{map-get($bp, 'sphonep') + 1}) {
+    @content;
+  }
+}
+
+@mixin sphoneSE {
+  @media only screen and (max-width: map-get($bp, "sphonese")) {
+    @content;
+  }
+}
+
+@mixin max($max) {
+  @media only screen and (max-width: #{$max}px) {
+    @content;
+  }
+}
+
+@mixin min($min) {
+  @media only screen and (min-width: #{$min}px) {
+    @content;
+  }
+}
+
+@mixin print {
+  @media print {
+    @content;
+  }
+}
+
+@mixin retina {
+  @media (min-device-pixel-ratio: 2), (resolution >= 2dppx) {
+    @content;
+  }
+}
+
+// clearfix
+@mixin clearfix() {
+  &::after {
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    content: ".";
+  }
+}
+
+// font-size
+@mixin fz($size: $baseFont, $important: false) {
+  $result: math.div($size, 16);
+
+  font-size: if($important, ($result + rem!important), ($result + rem));
+}
+
+@function get_vw($size, $viewport: 375) {
+  $rate: math.div(100, $viewport);
+
+  @return $rate * $size * 1vw;
+}
+
+@mixin animation($animation-name, $s, $easing, $count, $end: none, $delay: 0) {
+  animation: $animation-name;
+  animation-duration: $s;
+  animation-timing-function: $easing;
+  animation-delay: $delay;
+  animation-iteration-count: $count;
+  animation-fill-mode: $end;
+}
+
+@mixin accessibilityHidden {
+  position: fixed;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}

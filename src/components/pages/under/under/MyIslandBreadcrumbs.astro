@@ -1,0 +1,14 @@
+---
+import Breadcrumb from "src/components/layouts/breadcrumb/Breadcrumb.astro";
+
+const breadcrumbs = [
+  { text: "下層第一階層", href: "/under/", current: false },
+  {
+    text: "下層第二階層",
+    href: "/under/under/",
+    current: true,
+  },
+];
+---
+
+<Breadcrumb breadcrumbs={breadcrumbs} />
