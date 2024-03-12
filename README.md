@@ -1,13 +1,16 @@
+![View Transitions](/public/assets/img/demo.gif)
+
 ## 環境情報
 
-- 言語: TypeScript
-- UIライブラリ: Astro v3.2.3
-- スタイリング: Sass v1.69.0
-- リンター: ESLint v8.50.0
-- フォーマッター: Prettier v3.0.3
+- **言語** : `TypeScript`
+- **UIライブラリ** : `Astro v3.2.3`
+- **スタイリング** : `Sass v1.69.0`
+- **リンター** : `ESLint v8.50.0`
+- **フォーマッター** : `Prettier v3.0.3`
 
 ## ディレクトリ構造
 
+```
 astro-codingset/
 │ .browserslistrc # 対応ブラウザの設定
 │ .editorconfig # エディタの設定
@@ -64,35 +67,42 @@ astro-codingset/
 ├── easing.scss # easing変数
 ├── mixin.scss # mixin定義
 └── variables.scss # プロジェクト共通変数
+```
 
 ## コマンド
 
-- `npm install`
-- `npm run dev` または `npm run start`: ローカル開発サーバー起動
-- `npm run build`: 本番用にビルド
-- `npm run preview`: ビルド後プレビュー
+| Command                          | Action                   |
+| :------------------------------- | :----------------------- |
+| `npm install`                    | 依存関係インストール     |
+| `npm run dev` or `npm run start` | ローカル開発サーバー起動 |
+| `npm run build`                  | 本番用にビルド           |
+| `npm run preview`                | ビルド後プレビュー       |
 
-### フォーマッター
+## フォーマッター
 
-- [Prettier] `src`ディレクトリ内の全てのファイルが適切にフォーマットされているかをチェック
-  `npm run lint:prettier`
+- **[Prettier]** : `src`ディレクトリ内の全てのファイルが適切にフォーマットされているかをチェック
 
-- [Prettier] `src`ディレクトリ内の全てのファイルをフォーマット
-  `npm run fix:prettier`
+  - `npm run lint:prettier`
 
-### リンター
+- **[Prettier]** : `src`ディレクトリ内の全てのファイルをフォーマット
+  - `npm run fix:prettier`
 
-- [Stylelint] `.astro`、`.css`、`.scss`の拡張子を持つスタイルの問題検出
-  `npm run lint:stylelint`
+## リンター
 
-- [Stylelint] `.astro`、`.css`、`.scss`の拡張子を持つスタイルの問題検出及び自動修正
-  `npm run fix:stylelint`
+- **[Stylelint]** : `.astro`、`.css`、`.scss`の拡張子を持つスタイルの問題検出
 
-- [ESLint] `.astro`、`.ts`、`.js`の拡張子を持つスクリプトの問題検出
-  `npm run lint:eslint`
+  - `npm run lint:stylelint`
 
-- [ESLint] `.astro`、`.ts`、`.js`の拡張子を持つスクリプトの問題検出及び自動修正
-  `npm run fix:eslint`
+- **[Stylelint]** : `.astro`、`.css`、`.scss`の拡張子を持つスタイルの問題検出及び自動修正
+
+  - `npm run fix:stylelint`
+
+- **[ESLint]** : `.astro`、`.ts`、`.js`の拡張子を持つスクリプトの問題検出
+
+  - `npm run lint:eslint`
+
+- **[ESLint]** : `.astro`、`.ts`、`.js`の拡張子を持つスクリプトの問題検出及び自動修正
+  - `npm run fix:eslint`
 
 ## 利用するメリット
 
