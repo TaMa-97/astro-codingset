@@ -1,11 +1,11 @@
-## Astro + View Transitions Demo
+## 👀 Astro + View Transitions Demo
 
 ![View Transitions](/public/assets/img/demo.gif)
 
 ## 環境情報
 
 - **言語** : `TypeScript`
-- **UIライブラリ** : `Astro v3.2.3`
+- **フレームワーク** : `Astro v3.2.3`
 - **スタイリング** : `Sass v1.69.0`
 - **リンター** : `ESLint v8.50.0`, `Stylelint v15.10.3`
 - **フォーマッター** : `Prettier v3.0.3`
