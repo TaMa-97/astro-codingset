@@ -45,7 +45,7 @@ astro-codingset/
 │ ├── under
 │ │ ├── under02                        # 下層第二階層
 │ │ └── index                          # 下層第一階層
-│ └── top # TOP
+│ └── top                              # TOP
 ├── layouts                            # プロジェクト共通レイアウト群
 │ ├── common
 │ │ ├── AnalyticsBody.astro
