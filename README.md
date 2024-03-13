@@ -26,7 +26,7 @@ astro-codingset/
 │ package-lock.json                    # パッケージのバージョン情報
 │ package.json                         # プロジェクトの依存関係とスクリプトの定義
 │ postcss.config.cjs                   # PostCSSの設定ファイル
-│ README.md # このファイル
+│ README.md                            # このファイル
 │ stylelint.config.cjs                 # Stylelintの設定ファイル
 │ tsconfig.json                        # TypeScriptのコンパイラ設定ファイル
 │
