@@ -1,4 +1,4 @@
-@use "src/styles/global"as *;
+@use "src/styles/global" as *;
 @use "sass:math";
 
 /* link
@@ -132,7 +132,6 @@ gBreadcrumb
       }
     }
   }
-
 }
 
 //.gBreadcrumb
@@ -143,6 +142,7 @@ gContents
 .gContents {
   position: relative;
   z-index: 1;
+  flex: 1;
   font-family: $baseFontFamily;
 
   // padding-top: $headerHeight;
@@ -168,8 +168,7 @@ gWrapper
   min-height: 100vh;
   min-height: 100dvh;
   overflow: hidden;
-}//.gWrapper
-
+} //.gWrapper
 
 .gUnderWrapper {
   position: relative;
@@ -180,7 +179,7 @@ gWrapper
   @include tabletP {
     padding: 40px 0 60px;
   }
-}//.gUnderWrapper
+} //.gUnderWrapper
 
 .gSection {
   margin-bottom: 80px;
@@ -189,7 +188,6 @@ gWrapper
     margin-bottom: 40px;
   }
 }
-
 
 /*
 gPcOnly

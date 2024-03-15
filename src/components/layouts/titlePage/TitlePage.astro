@@ -9,12 +9,18 @@ export interface TitlePageProps {
 const { parentId, pageId, titleJa, titleEn } = Astro.props;
 ---
 
-<h1 class={`cmpTitlePage -${parentId} -${pageId}`}>
-  <span class="container cmpTitlePage__inner">
-    <span class="cmpTitlePage__txtMain">{titleJa}</span>
-    <span class="cmpTitlePage__txtSub">{titleEn}</span>
-  </span>
-</h1><!-- /.cmpTitlePage -->
+<div class={`cmpTitlePage -${parentId} -${pageId}`}>
+  <div class="cmpTitlePage__inner" transition:name={pageId}>
+    <div class="cmpTitlePage__titleArea">
+      <h1 class="cmpTitlePage__title">
+        {titleJa}<span class="cmpTitlePage__title-en">{titleEn}</span>
+      </h1>
+    </div>
+    <div class="cmpTitlePage__img">
+      <img src="https://placehold.jp/1000x700.png" alt="" />
+    </div>
+  </div>
+</div>
 
 <style lang="scss">
   @use "sass:math";
@@ -22,88 +28,90 @@ const { parentId, pageId, titleJa, titleEn } = Astro.props;
   $_imgPath: "/assets/img/";
 
   .cmpTitlePage {
-    display: flex;
-    min-height: 320px;
-    margin: 50px;
-    background-image: url("https://placehold.jp/1000x1000.png");
-    background-position: center;
-    background-size: cover;
-    border-radius: 20px;
+    $_: ".cmpTitlePage";
 
-    @include tabletP {
-      min-height: 200px;
-      margin: 25px;
+    padding: 30px $containerPadding 30px $containerPadding;
+    margin-bottom: 50px;
+    background: #f2f2f2;
+
+    &__inner {
+      position: relative;
+      max-width: 976px;
+      margin-right: auto;
+      margin-left: auto;
     }
 
-    $_: &;
-    $_classList: (
-      sample: (
-        index,
-      ),
-    );
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: flex-start;
+    }
 
-    @each $_id, $_class in $_classList {
-      @each $_class-child in $_class {
-        @at-root .-#{$_id}.-#{$_class-child} {
-          background-image: url(#{$_imgPath}#{$_id}/#{$_class-child}/bg_titlePage.png);
+    &__item {
+      width: calc((100% - 20px) / 2);
 
-          @include retina {
-            background-image: url(#{$_imgPath}#{$_id}/#{$_class-child}/bg_titlePage@2x.png);
-          }
+      @include tabletP {
+        width: 100%;
+      }
+    }
 
-          @include tabletP {
-            background-image: url(#{$_imgPath}#{$_id}/#{$_class-child}/bg_titlePage_sp.png);
+    &__img {
+      img {
+        border-radius: 20px;
+      }
+    }
 
-            @include retina {
-              background-image: url(#{$_imgPath}#{$_id}/#{$_class-child}/bg_titlePage_sp@2x.png);
-            }
-          }
+    &__titleArea {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 30px;
+      margin: auto;
+      color: #fff;
+      background: #0041c0;
+      border-radius: 0 0 20px 20px;
+
+      @include tabletP {
+        padding: 15px 20px;
+      }
+    }
+
+    &__title {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      justify-content: flex-start;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+
+      @include fz(26);
+
+      @include tabletP {
+        @include fz(20);
+
+        gap: 5px;
+      }
+
+      &-en {
+        position: relative;
+        top: 2px;
+        display: inline-block;
+        font-family: $fontAlpha;
+        font-weight: 400;
+        letter-spacing: 0.1em;
+
+        @include fz(16);
+
+        @include tabletP {
+          @include fz(13);
         }
       }
     }
-
-    &__inner {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      justify-content: center;
-      width: 100%;
-    }
-
-    &__txtMain {
-      display: inline-block;
-      align-self: flex-start;
-      padding: 5px 13px;
-      line-height: math.div(62, 42);
-      color: #fff;
-      letter-spacing: 0.05em;
-      background: #0041c0;
-
-      @include fz(42);
-
-      @include tabletP {
-        @include fz(25);
-
-        padding: 4px 13px;
-      }
-    }
-
-    &__txtSub {
-      display: inline-block;
-      align-self: flex-start;
-      padding: 5px 13px;
-      font-family: $fontAlpha;
-      color: #fff;
-      letter-spacing: 0.1em;
-      background: #0041c0;
-
-      @include fz(16);
-
-      @include tabletP {
-        @include fz(12);
-
-        padding: 4px 13px;
-      }
-    }
-  }
+  } //.cmpTitlePage
 </style>
