@@ -53,7 +53,7 @@ astro-codingset/
 │ │ ├── DesignToken.astro
 │ │ └── Variables.astro
 │ └── BaseLayout.astro
-├── pages # ルーティング制御
+├── pages                              # ルーティング制御
 │ ├── under
 │ │ ├── under02
 │ │ │ └── index.astro                  # 下層第二階層
