@@ -1,6 +1,6 @@
 ## 👀 Astro + View Transitions Demo
 
-![View Transitions](/public/assets/img/demo.gif)
+![View Transitions](/public/assets/demo.gif)
 
 ## 環境情報
 
