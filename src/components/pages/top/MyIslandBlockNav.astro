@@ -1,5 +1,5 @@
 ---
-import { siteData } from "src/layouts/common/Variables.astro";
+import { siteData } from "@/layouts/common/Variables.astro";
 const pageId = "top";
 const cmnPath = `${siteData.gRootPath}assets/img/common/`;
 const imgPath = `${siteData.gRootPath}assets/img/${pageId}/`;
@@ -113,7 +113,7 @@ const imgPath = `${siteData.gRootPath}assets/img/${pageId}/`;
         padding: 15px 30px;
         margin: auto;
         color: #fff;
-        background: #0041c0;
+        background: map-get($mainColor, color01);
         border-radius: 0 0 20px 20px;
 
         @include tabletP {

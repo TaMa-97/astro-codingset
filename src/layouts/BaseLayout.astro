@@ -2,13 +2,13 @@
 import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
 import { SEO, Props as AstroSeoProps } from "astro-seo";
 import { ViewTransitions } from "astro:transitions";
-import AnalyticsBody from "src/layouts/common/AnalyticsBody.astro";
-import AnalyticsHead from "src/layouts/common/AnalyticsHead.astro";
-import DesignToken from "src/layouts/common/DesignToken.astro";
-import { siteData } from "src/layouts/common/Variables.astro";
+import AnalyticsBody from "@/layouts/common/AnalyticsBody.astro";
+import AnalyticsHead from "@/layouts/common/AnalyticsHead.astro";
+import DesignToken from "@/layouts/common/DesignToken.astro";
+import { siteData } from "@/layouts/common/Variables.astro";
 
-import "src/styles/foundation/reset.scss";
-import "src/styles/foundation/base.scss";
+import "@/styles/foundation/reset.scss";
+import "@/styles/foundation/base.scss";
 
 export type Props = AstroSeoProps & {
   title: string;

@@ -24,6 +24,11 @@ export default defineConfig({
         },
       },
     },
+    resolve: {
+      alias: {
+        "@": "/src",
+      },
+    },
   },
   integrations: [astroImageTools, prefetch()],
 });

@@ -43,7 +43,7 @@ astro-codingset/
 │ ├── layouts
 │ └── pages
 │ ├── under
-│ │ ├── under02                        # 下層第二階層
+│ │ ├── under                          # 下層第二階層
 │ │ └── index                          # 下層第一階層
 │ └── top                              # TOP
 ├── layouts                            # プロジェクト共通レイアウト群
@@ -55,7 +55,7 @@ astro-codingset/
 │ └── BaseLayout.astro
 ├── pages                              # ルーティング制御
 │ ├── under
-│ │ ├── under02
+│ │ ├── under
 │ │ │ └── index.astro                  # 下層第二階層
 │ │ └── index.astro                    # 下層第一階層
 │ └── index.astro                      # TOP

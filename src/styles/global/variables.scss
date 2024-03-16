@@ -6,10 +6,13 @@ $baseLetterSpacing: 0;
 // color
 $baseFontColor: var(--baseFontColor);
 $baseFontLinkColor: var(--baseFontLinkColor);
-$mainColor: var(--mainColor1), var(--mainColor2), var(--mainColor3);
-$accentColor: var(--accentColor); //強調色など
-$subColor: var(--subColor); //背景色など
-
+$mainColor: (
+  color01: var(--mainColor1),
+  color02: var(--mainColor2),
+  color03: var(--mainColor3),
+);
+$accentColor: var(--accentColor);
+$subColor: var(--subColor);
 $formColor: (
   border: var(--formColorBorder),
   placeholder: var(--formColorPlaceholder),

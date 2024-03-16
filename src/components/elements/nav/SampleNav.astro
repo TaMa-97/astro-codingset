@@ -53,14 +53,14 @@ const { navList } = Astro.props;
       padding: 16px;
       font-weight: 500;
       line-height: math.div(24, 16);
-      color: #0041c0;
+      color: map-get($mainColor, color01);
       text-align: center;
       text-decoration: none;
       letter-spacing: 0.05em;
 
       @include fz(16);
 
-      border: 1px solid #0041c0;
+      border: 1px solid map-get($mainColor, color01);
       border-radius: 6px;
       transition: all 0.3s ease;
 
@@ -85,7 +85,7 @@ const { navList } = Astro.props;
       height: calc(tan(60deg) * 12px / 2);
       margin: auto;
       clip-path: polygon(0 0, 100% 0, 50% 100%);
-      background: #0041c0;
+      background: map-get($mainColor, color01);
 
       @include tabletP {
         top: 0;

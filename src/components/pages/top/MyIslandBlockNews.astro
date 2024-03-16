@@ -1,5 +1,5 @@
 ---
-import { siteData } from "src/layouts/common/Variables.astro";
+import { siteData } from "@/layouts/common/Variables.astro";
 const pageId = "top";
 const cmnPath = `${siteData.gRootPath}assets/img/common/`;
 const imgPath = `${siteData.gRootPath}assets/img/${pageId}/`;
@@ -12,25 +12,22 @@ const imgPath = `${siteData.gRootPath}assets/img/${pageId}/`;
     </h2>
     <ul class="myNews__list">
       <li class="myNews__item">
-        <p class="myNews__date">2024年3月22日</p>
+        <p class="myNews__date">xxxx年x月x日</p>
         <p class="myNews__text">
-          Webサイトをリニューアルしました。<br />
           <a href="/under/" class="myNews__link" rel="prefetch">こちら</a
           >よりご覧ください。
         </p>
       </li>
       <li class="myNews__item">
-        <p class="myNews__date">2024年3月22日</p>
+        <p class="myNews__date">xxxx年x月x日</p>
         <p class="myNews__text">
-          Webサイトをリニューアルしました。<br />
           <a href="/under/" class="myNews__link" rel="prefetch">こちら</a
           >よりご覧ください。
         </p>
       </li>
       <li class="myNews__item">
-        <p class="myNews__date">2023年6月21日</p>
+        <p class="myNews__date">xxxx年x月x日</p>
         <p class="myNews__text">
-          Webサイトをリニューアルしました。<br />
           <a href="/under/" class="myNews__link" rel="prefetch">こちら</a
           >よりご覧ください。
         </p>
@@ -67,7 +64,7 @@ const imgPath = `${siteData.gRootPath}assets/img/${pageId}/`;
         display: block;
         font-family: $fontAlpha;
         font-weight: 400;
-        color: #0041c0;
+        color: map-get($mainColor, color01);
         letter-spacing: 0.1em;
 
         @include fz(16);
@@ -124,7 +121,7 @@ const imgPath = `${siteData.gRootPath}assets/img/${pageId}/`;
     }
 
     &__link {
-      color: #0041c0;
+      color: map-get($mainColor, color01);
       text-decoration: underline;
 
       &:hover {
