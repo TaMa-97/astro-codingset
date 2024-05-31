@@ -96,14 +96,3 @@ astro-codingset/
 | `npm run fix:stylelint`  | **[Stylelint]** : `.astro`、`.css`、`.scss`の拡張子を持つスタイルの問題検出及び自動修正 |
 | `npm run lint:eslint`    | **[ESLint]** : `.astro`、`.ts`、`.js`の拡張子を持つスクリプトの問題検出                 |
 | `npm run fix:eslint`     | **[ESLint]** : `.astro`、`.ts`、`.js`の拡張子を持つスクリプトの問題検出及び自動修正     |
-
-## 利用するメリット
-
-- モジュールバンドラとしてViteを利用しているのでホットリロードが高速
-- ビルド時に不要なJSを剥がすのでパフォーマンス向上
-- ファイル保存時の自動フォーマット
-- View Transitionsによるページ遷移アニメーションが容易に実装できる
-- コンポーネントベースの開発（UIを再利用可能なコンポーネントに分割して管理できる）
-- ライブラリの互換性（React、Vue、Svelte等のコンポーネントを再利用できる）
-
-など
