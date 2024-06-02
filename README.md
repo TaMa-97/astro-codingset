@@ -15,28 +15,7 @@
 
 ```
 astro-codingset/
-│ .browserslistrc                      # 対応ブラウザの設定
-│ .editorconfig                        # エディタの設定
-│ .eslintignore                        # ESLintが無視するファイル・ディレクトリ
-│ .eslintrc.cjs                        # ESLintの設定ファイル
-│ .gitignore                           # Gitが無視するファイル・ディレクトリ
-│ .prettierignore                      # Prettierが無視するファイル・ディレクトリ
-│ .prettierrc.json                     # Prettierの設定ファイル
-│ astro.config.mjs                     # Astroの設定ファイル
-│ package-lock.json                    # パッケージのバージョン情報
-│ package.json                         # プロジェクトの依存関係とスクリプトの定義
-│ postcss.config.cjs                   # PostCSSの設定ファイル
-│ README.md                            # このファイル
-│ stylelint.config.cjs                 # Stylelintの設定ファイル
-│ tsconfig.json                        # TypeScriptのコンパイラ設定ファイル
-│
-├─.vscode                              # VSCodeの設定ファイル群
-│ extensions.json                      # 推奨拡張機能リスト
-│ launch.json                          # デバッグ設定
-│ settings.json                        # VSCodeのワークスペース設定
-│
 ├─public                               # 静的ファイル(favicon,OGPなど)
-│
 └─src
 ├── components                         # コンポーネント群
 │ ├── elements
@@ -53,23 +32,23 @@ astro-codingset/
 │ │ ├── DesignToken.astro
 │ │ └── Variables.astro
 │ └── BaseLayout.astro
-├── pages                              # ルーティング制御
+├── pages                              # ルーティング
 │ ├── under
 │ │ ├── under
 │ │ │ └── index.astro                  # 下層第二階層
 │ │ └── index.astro                    # 下層第一階層
 │ └── index.astro                      # TOP
 ├── scripts                            # スクリプトファイル群
-│ ├── global                           # プロジェクト共通スクリプト
-│ └── utils                            # プロジェクト汎用スクリプト
-└─styles                               # スタイルシート群
+│ ├── global                           # 共通スクリプト
+│ └── utils                            # 汎用スクリプト
+└── styles                             # スタイルシート群
   ├── foundation                       # 初期設定
-  │ ├── base.scss                      # プロジェクト共通スタイル
+  │ ├── base.scss                      # スタイルベース
   │ └── reset.scss                     # スタイルリセット
-  └── global                           # プロジェクト共通関数/変数
+  └── global                           # 共通関数/変数
     ├── easing.scss                    # easing変数
     ├── mixin.scss                     # mixin定義
-    └── variables.scss                 # プロジェクト共通変数
+    └── variables.scss                 # 共通変数
 ```
 
 ## コマンド一覧
